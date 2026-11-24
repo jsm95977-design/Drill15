@@ -38,6 +38,7 @@ class Zombie:
         self.hp = 2
         self.size = 200
 
+
     def update(self):
         dt = game_framework.frame_time
         self.frame = (self.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * dt) % FRAMES_PER_ACTION
@@ -66,6 +67,7 @@ class Zombie:
             if self.hp == 2:
                 self.size /=2
                 self.hp -=1 
+                self.y = self.y/2 + 30
             elif self.hp == 1:
                 game_world.remove_object(self)
             
